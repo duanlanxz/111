@@ -56,20 +56,20 @@ function render() {
     });
 
     if (filtered.length === 0) {
-        list.innerHTML = '<li class="empty">暂无待办事项</li>';
+        list.innerHTML = '<li class="empty">今天也要元气满满哦 ~</li>';
     } else {
         list.innerHTML = filtered.map(t => `
             <li class="todo-item ${t.done ? 'done' : ''}">
                 <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTodo(${t.id})">
                 <span>${escapeHtml(t.text)}</span>
-                <button class="delete-btn" onclick="deleteTodo(${t.id})">&times;</button>
+                <button class="delete-btn" onclick="deleteTodo(${t.id})">✕</button>
             </li>
         `).join('');
     }
 
     const total = todos.length;
     const doneCount = todos.filter(t => t.done).length;
-    statusBar.textContent = total ? `共 ${total} 项，已完成 ${doneCount} 项` : '';
+    statusBar.textContent = total ? `${doneCount} / ${total} done` : '';
 }
 
 render();
