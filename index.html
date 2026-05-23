@@ -1,35 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的手帐待办</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="app">
-        <div class="tape tape-left"></div>
-        <div class="tape tape-right"></div>
-
-        <h1>my to-do list</h1>
-
-        <div class="input-bar">
-            <input id="todoInput" type="text" placeholder="写下今天要做的事..." autofocus>
-            <button onclick="addTodo()">+</button>
-        </div>
-
-        <div class="filters">
-            <button class="active" onclick="setFilter('all', this)">全部</button>
-            <button onclick="setFilter('active', this)">待完成</button>
-            <button onclick="setFilter('done', this)">已完成</button>
-        </div>
-
-        <ul class="todo-list" id="todoList"></ul>
-        <div class="status-bar" id="statusBar"></div>
-
-        <div class="footer-deco">~ today is a good day ~</div>
-    </div>
-
-    <script src="app.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
